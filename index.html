@@ -453,9 +453,7 @@ footer{padding:8px 0 24px;text-align:center;font-size:10.5px;color:var(--ink-fai
 
 </main>
 
-<footer class="wrap">
-  ✦ ข้อมูล 466 งวด · พ.ศ. 2549 – 2569 · อัปเดตถึงงวด 1 ก.ค. 2569 ✦
-</footer>
+<footer class="wrap" id="footNote"></footer>
 
 <nav>
   <div class="nav-inner">
@@ -509,6 +507,11 @@ document.getElementById('latestP1').textContent = latest.p1;
 document.getElementById('latestF3').textContent = latest.f3.join(' · ');
 document.getElementById('latestL3').textContent = latest.l3.join(' · ');
 document.getElementById('latestL2').textContent = latest.l2;
+
+/* ---------- dynamic masthead + footer ---------- */
+const minBY = DRAWS[DRAWS.length-1].by, maxBY = DRAWS[0].by;
+document.getElementById('mastSub').textContent = `ผลสลากกินแบ่งรัฐบาล พ.ศ. ${minBY}–${maxBY}`;
+document.getElementById('footNote').textContent = `✦ ข้อมูล ${N} งวด · พ.ศ. ${minBY} – ${maxBY} · อัปเดตถึงงวด ${latest.th} ✦`;
 
 /* ---------- top last-2: podium + bars ---------- */
 document.getElementById('note2').textContent = N + ' งวด';
